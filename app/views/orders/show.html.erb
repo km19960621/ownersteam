@@ -1,0 +1,115 @@
+<div class="user-wrapper">
+  <%= image_tag @user.image.url, class: "user-img" %>
+  <div class="user-name"><%= "オーナー名：#{@user.name}" %></div>
+  <div class="user-home"><%= "本拠地：#{@user.home}" %></div>
+  <%= link_to 'ユーザーのページへ', "/users/#{@user.id}", class: 'btn btn-sm user-btn' %>
+</div>
+<div class="order-wrapper">
+  <div class="order-single-wrapper">
+    <div class="order-title">
+      <% if @order.title? %>
+        <%= link_to @order.title, "/orders/#{@order.id}", class: "order-title-text" %>
+      <% else %>
+        <%= link_to "駒形ダックス#{@order.id}", "/orders/#{@order.id}", class: "order-title-text" %>
+      <% end %>
+    </div>
+    <div class="order-single">
+      <div class="order-content">
+        <%= link_to image_tag('ownersteam.png', :class => 'ground'), "/orders/#{@order.id}" %>
+
+        <% pitcher = @order.players.find_by(position_id: 1) %>
+        <% pitcher_card = pitcher.card %>
+        <%= image_tag pitcher_card.image_front.url, :class => 'pitcher pitcher-img img' %>
+        <!--
+        <p class="pitcher pitcher-txt txt"><span class="position">投手</span><span class="name">山田太郎</span></p>
+        -->
+
+        <% catcher = @order.players.find_by(position_id: 2) %>
+        <% catcher_card = catcher.card %>
+        <%= image_tag catcher_card.image_front.url, :class => 'catcher catcher-img img' %>
+        <!--
+        <p class="catcher catcher-txt txt"><span class="position">捕手</span><span class="name"></span></p>
+        -->
+
+        <% first = @order.players.find_by(position_id: 3) %>
+        <% first_card = first.card %>
+        <%= image_tag first_card.image_front.url, :class => 'first first-img img' %>
+        <!--
+        <p class="first first-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% second = @order.players.find_by(position_id: 4) %>
+        <% second_card = second.card %>
+        <%= image_tag second_card.image_front.url, :class => 'second second-img img' %>
+        <!--
+        <p class="second second-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% third = @order.players.find_by(position_id: 5) %>
+        <% third_card = third.card %>
+        <%= image_tag third_card.image_front.url, :class => 'third third-img img' %>
+        <!--
+        <p class="third third-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% short = @order.players.find_by(position_id: 6) %>
+        <% short_card = short.card %>
+        <%= image_tag short_card.image_front.url, :class => 'short short-img img' %>
+        <!--
+        <p class="short short-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% left = @order.players.find_by(position_id: 7) %>
+        <% left_card = left.card %>
+        <%= image_tag left_card.image_front.url, :class => 'left left-img img' %>
+        <!--
+        <p class="left left-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% center = @order.players.find_by(position_id: 8) %>
+        <% center_card = center.card %>
+        <%= image_tag center_card.image_front.url, :class => 'center center-img img' %>
+        <!--
+        <p class=" -txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% right = @order.players.find_by(position_id: 9) %>
+        <% right_card = right.card %>
+        <%= image_tag right_card.image_front.url, :class => 'right right-img img' %>
+        <!--
+        <p class=" -txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+        <% dh = @order.players.find_by(position_id: 10) %>
+        <% dh_card = dh.card %>
+        <%= image_tag dh_card.image_front.url, :class => 'dh dh-img img' %>
+        <!--
+        <p class="dh dh-txt txt"><span class="position"></span><span class="name"></span></p>
+        -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<table border="1">
+  <tr>
+    <th colspan="3">スターティングオーダー</th>
+  </tr>
+  <% @order.players.each_with_index do |player, i| %>
+    <tr>
+      <td class="td-num">
+        <% batting_order = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""] %>
+        <%= batting_order[i] %>
+      </td>
+      <td class="td-position">
+        <%= player.position.name %>
+      </td>
+      <td class="td-card">
+        <%= player.card.name %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<% if current_user == @order.user %>
+  <%= link_to 'オーダーの編集', "/orders/#{@order.id}/edit", class: 'btn btn-sm order-edit-btn' %>
+<% end %>

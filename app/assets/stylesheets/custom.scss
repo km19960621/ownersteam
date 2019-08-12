@@ -1,0 +1,379 @@
+.background {
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(to bottom, dodgerblue, lightskyblue);
+}
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+.navbar-transparent {
+  background: linear-gradient(to right, rgba(105, 105, 105, 0.95), rgba(105, 105, 105, 0.95)) ,url('navbar.jpg');
+  background-size: cover;
+  font-weight: 600;
+  a {
+    color: white !important;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
+    text-shadow: 1px 1px black;
+  }
+  .navbar-left {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 35px;
+  }
+}
+
+
+.btn-black {
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  background: linear-gradient(to bottom, dimgray, black 62%, dimgray);
+  margin-right: auto;
+  margin-left: auto;
+  &:hover {
+    color: #565656;
+  }
+}
+
+.paginate {
+  text-align: center;
+}
+
+.form {
+  padding: 10px;
+  .submit {
+    margin: 5px;
+  }
+}
+
+table {
+  background-color: black;
+  width: 250px;
+  height: 400px;
+  margin: auto;
+  padding: 3px 7px;
+  border-collapse: separate;
+  border-spacing: 0px 3px;
+  border-radius: 5px;
+  border: 2px solid slategray;
+}
+select {
+  background-color: dimgray;
+}
+.users-new-wrapper {
+  select {
+    background-color: white;
+  }
+}
+caption {
+  text-align: center;
+}
+table th, td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+table td {
+  background-color: dimgray;
+}
+table th {
+  font-weight: normal;
+  background-color: slategray;
+  color: white;
+  text-align: center;
+}
+.td-num {
+  text-align: center;
+  width: 15%;
+  background-color: white;
+}
+.td-position {
+  padding-left: 10px;
+  width: 40%;
+  color: white;
+}
+.td-card {
+  padding-left: 10px;
+  width: 50%;
+  color: white;
+}
+.submit {
+  text-align: center;
+  margin: 5px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card-single-wrapper {
+  margin: 10px;
+  padding: 4px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, white, whitesmoke 50%, white);
+}
+.card-name {
+  text-align: center;
+  display: block;
+  font-size: 15px;
+  background: linear-gradient(to bottom, whitesmoke, gray);
+  border: 1px solid gray;
+  padding: 3px 0px;
+}
+.card-name-text {
+  color: white;
+}
+.card-single {
+  padding: 3px 10px;
+  border: 1px solid gray;
+  background: linear-gradient(to bottom, white, gray 50%, white);
+}
+
+.link {
+  float: right;
+}
+
+.order-wrapper {
+  width: 80vw;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 10px;
+}
+.order-single-wrapper {
+  margin-bottom: 25px;
+  padding: 4px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, white, lightyellow 50%, white);
+}
+.order-title {
+  text-align: center;
+  font-size: 15px;
+  background: linear-gradient(to bottom, lightyellow, darkgoldenrod);
+  border: 1px solid darkgoldenrod;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.order-title-text {
+  color: white;
+}
+.order-single {
+  padding: 3px 10px;
+  border: 1px solid darkgoldenrod;
+  background: linear-gradient(to bottom, lightyellow, darkgoldenrod 50%, lightyellow);
+}
+
+.user-wrapper {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 80vw;
+  max-width: 600px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 7.5px 7.5px rgba(0,0,0,0.6);
+}
+.user-img {
+  width: 75px;
+  height: 75px;
+}
+.user-name, .user-home {
+  color: white;
+  font-size: 12.5px;
+  margin: 7.5px;
+}
+.user-btn {
+  color: white;
+  background-color: mediumseagreen;
+  font-size: 5px;
+  margin-top: 15px;
+}
+
+.favorite-player-wrapper {
+  background: linear-gradient(to bottom, white, silver 50%, white);
+  margin: 0 auto;
+  text-align: center;
+  width: 150px;
+  padding: 3px;
+  border: 1px solid black;
+}
+.favorite-player-title {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(to bottom, dimgray, black 50%, dimgray);
+  border-left: solid 2.5px silver;
+  border-right: solid 2.5px silver;
+  margin-bottom: 0px;
+}
+.favorite-player {
+  width: 100%;
+  padding: 3px 10px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, black, darkgoldenrod 50%, gold);
+}
+
+.btn-wrapper {
+  text-align: center;
+  padding: 15px;
+}
+.btns {
+  width: 40vw;
+  max-width: 300px;
+}
+.order-btn {
+  color: white;
+  background: linear-gradient(to bottom, lightyellow, darkgoldenrod);
+  border: 1px solid darkgoldenrod;
+}
+.card-btn {
+  color: white;
+  background: linear-gradient(to bottom, whitesmoke, gray);
+  border: 1px solid gray;
+}
+.active-order-btn {
+  color: darkgoldenrod;
+  background-color: white;
+  border: 1px solid darkgoldenrod;
+}
+.active-card-btn {
+  color: gray;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+
+.order-content {
+  position: relative;
+}
+.ground {
+  width: 100%;
+  margin: auto;
+}
+.img {
+  width: 17.5%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.txt {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  .position {
+    background: darkgray;
+  }
+  .name {
+    background: white;
+  }
+}
+
+.pitcher {
+  left: 50%;
+}
+.pitcher-img {
+  top: 55%;
+}
+.pitcher-txt {
+  top: 0%;
+}
+
+.catcher {
+  left: 50%;
+}
+.catcher-img {
+  top: 85%;
+}
+.catcher-txt {
+  top: 0%;
+}
+
+.first {
+  left: 82.5%;
+}
+.first-img {
+  top: 57.5%;
+}
+.first-txt {
+  top: 0%;
+}
+
+.second {
+  left: 70%;
+}
+.second-img {
+  top: 32.5%;
+}
+.second-txt {
+  top: 0%;
+}
+
+.third {
+  left: 17.5%;
+}
+.third-img {
+  top: 57.5%;
+}
+.third-txt {
+  top: 0%;
+}
+
+.short {
+  left: 30%;
+}
+.short-img {
+  top: 32.5%;
+}
+.short-txt {
+  top: 0%;
+}
+
+.left {
+  left: 10%;
+}
+.left-img {
+  top: 15%;
+}
+.left-txt {
+  top: 0%;
+}
+
+.center {
+  left: 50%;
+}
+.center-img {
+  top: 12.5%;
+}
+.center-txt {
+  top: 0%;
+}
+
+.right {
+  left: 90%;
+}
+.right-img {
+  top: 15%;
+}
+.right-txt {
+  top: 0%;
+}
+
+.dh {
+  left: 87.5%;
+}
+.dh-img {
+  top: 87.5%;
+}
+.dh-txt {
+  top: 0%;
+}

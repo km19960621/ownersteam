@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OWNERSTEAM</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed&display=swap" rel="stylesheet">
+
+  <body class="background">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+
+    <nav class="navbar navbar-transparent p-5">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+              <%= link_to "OWNERSTEAM", root_path %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to "カード登録", new_card_path %>
+            </li>
+            <li>
+              <%= link_to "オーダー作成", new_order_path %>
+            </li>
+            <li>
+              <%= link_to "マイページ", "/users/#{current_user.id}" %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "新規登録", new_user_path %>
+            </li>
+            <li>
+              <%= link_to "ログイン", login_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <script>
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
+    </script>
+  </body>
+</html>

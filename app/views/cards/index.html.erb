@@ -1,0 +1,25 @@
+<div class="container box">
+  <% @cards.each do |card| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 box">
+        <div class="card-single-wrapper">
+        <div class="card-name">
+            <% if current_user == card.user %>
+              <%= link_to "#{card.name}", edit_card_path(card), class: 'card-name-text' %>
+            <% else %>
+              <p class="card-name-text">
+                <%= "#{card.name}(id:#{card.id})" %>
+              </p>
+            <% end %>
+          </div>
+          <div class="card-single">
+            <%= link_to image_tag(card.image_front.url, :width => 200), edit_card_path(card)  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="paginate">
+  <%= paginate @cards %>
+</div>

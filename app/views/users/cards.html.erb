@@ -1,0 +1,44 @@
+<div class="user-wrapper">
+  <%= image_tag @user.image.url, class: "user-img" %>
+  <div class="user-name"><%= "オーナー名：#{@user.name}" %></div>
+  <div class="user-home"><%= "本拠地：#{@user.home}" %></div>
+  <% if @user.card_id? %>
+  <div class="favorite-player-wrapper">
+    <p class="favorite-player-title">FAVORITE PLAYER</p>
+    <%= image_tag @card.image_front.url, class: "favorite-player" %>
+  </div>
+  <% end %>
+  <% if current_user == @user %>
+    <%= link_to 'ユーザー情報の編集', "/users/#{@user.id}/edit", class: 'btn btn-sm user-btn' %>
+  <% end %>
+</div>
+<div class="btn-wrapper">
+  <%= link_to "オーダー", "/users/#{@user.id}", class: 'btn btns order-btn'  %>
+  <p class="btn btns active-card-btn">カード</p>
+</div>
+</div>
+<div class="container box">
+  <% @cards.each do |card| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 box">
+        <div class="card-single-wrapper">
+          <div class="card-name">
+            <% if current_user == card.user %>
+              <%= link_to card.name, edit_card_path(card), class: 'card-name-text' %>
+            <% else %>
+              <p class="card-name-text">
+                <%= card.name %>
+              </p>
+            <% end %>
+          </div>
+          <div class="card-single">
+            <%= link_to image_tag(card.image_front.url, :width => 200), edit_card_path(card)  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="paginate">
+  <%= paginate @cards %>
+</div>

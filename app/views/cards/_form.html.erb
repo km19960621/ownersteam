@@ -1,0 +1,19 @@
+<%= form_with model: card do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_area :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image_front %>
+    <%= f.file_field :image_front %>
+  </div>
+  <!--
+  <div class="form-group">
+    <%= f.label :image_back %>
+    <%= f.file_field :image_back %>
+  </div>
+  -->
+  <% if logged_in? %>
+    <%= f.submit '登録', class: 'btn btn-black btn-block' %>
+  <% end %>
+<% end %>

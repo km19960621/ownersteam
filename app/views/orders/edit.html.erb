@@ -1,0 +1,4 @@
+<!--
+  <%= render partial: 'form', locals: { order: @order } %>
+-->
+<%= link_to '削除', @order, method: :delete, data: { confirm: "削除しました" }, class: 'link' %>
