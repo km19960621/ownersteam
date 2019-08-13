@@ -75,4 +75,6 @@ gem 'bcrypt'
 
 gem 'carrierwave'
 
+gem 'fog'
+
 gem 'kaminari'
