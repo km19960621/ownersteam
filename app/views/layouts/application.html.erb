@@ -22,13 +22,13 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "カード登録", new_card_path %>
+          </li>
+          <li>
+            <%= link_to "オーダー作成", new_order_path %>
+          </li>
           <% if logged_in? %>
-            <li>
-              <%= link_to "カード登録", new_card_path %>
-            </li>
-            <li>
-              <%= link_to "オーダー作成", new_order_path %>
-            </li>
             <li>
               <%= link_to "マイページ", "/users/#{current_user.id}" %>
             </li>

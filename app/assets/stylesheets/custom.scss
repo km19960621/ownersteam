@@ -1,7 +1,7 @@
 .background {
   min-height: 100vh;
   height: auto;
-  background: linear-gradient(to bottom, dodgerblue, lightskyblue);
+  background: linear-gradient(to bottom, royalblue, deepskyblue);
 }
 
 .alert {
@@ -120,7 +120,7 @@ table th {
 
 .card-single-wrapper {
   margin: 10px;
-  padding: 4px;
+  padding: 4.5px;
   border: 1px solid black;
   background: linear-gradient(to bottom, white, whitesmoke 50%, white);
 }
@@ -136,7 +136,7 @@ table th {
   color: white;
 }
 .card-single {
-  padding: 3px 10px;
+  padding: 3px 9px;
   border: 1px solid gray;
   background: linear-gradient(to bottom, white, gray 50%, white);
 }
@@ -147,13 +147,13 @@ table th {
 
 .order-wrapper {
   width: 80vw;
-  max-width: 600px;
+  max-width: 550px;
   margin: auto;
   margin-top: 10px;
 }
 .order-single-wrapper {
   margin-bottom: 25px;
-  padding: 4px;
+  padding: 6px;
   border: 1px solid black;
   background: linear-gradient(to bottom, white, lightyellow 50%, white);
 }
@@ -169,7 +169,7 @@ table th {
   color: white;
 }
 .order-single {
-  padding: 3px 10px;
+  padding: 4px 12px;
   border: 1px solid darkgoldenrod;
   background: linear-gradient(to bottom, lightyellow, darkgoldenrod 50%, lightyellow);
 }
@@ -177,12 +177,12 @@ table th {
 .user-wrapper {
   background-color: rgba(0, 0, 0, 0.3);
   width: 80vw;
-  max-width: 600px;
+  max-width: 550px;
   padding: 10px;
   margin: 0 auto;
   margin-bottom: 30px;
   text-align: center;
-  box-shadow: 7.5px 7.5px rgba(0,0,0,0.6);
+  box-shadow: 5px 5px rgba(0,0,0,0.6);
 }
 .user-img {
   width: 75px;
@@ -220,7 +220,7 @@ table th {
 }
 .favorite-player {
   width: 100%;
-  padding: 3px 10px;
+  padding: 2px 6px;
   border: 1px solid black;
   background: linear-gradient(to bottom, black, darkgoldenrod 50%, gold);
 }
@@ -231,7 +231,7 @@ table th {
 }
 .btns {
   width: 40vw;
-  max-width: 300px;
+  max-width: 275px;
 }
 .order-btn {
   color: white;

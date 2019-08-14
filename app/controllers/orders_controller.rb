@@ -32,13 +32,13 @@ class OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     order.update!(order_params)
-    redirect_to "/users/#{order.user.id}", notice: "更新しました"
+    redirect_to "/users/#{order.user.id}", success: "オーダーを更新しました"
   end
 
   def destroy
     order = Order.find(params[:id])
     order.destroy
-    redirect_to "/users/#{order.user.id}", notice: "削除しました"
+    redirect_to "/users/#{order.user.id}", success: "オーダーを削除しました"
   end
 
   private

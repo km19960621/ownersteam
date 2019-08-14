@@ -17,3 +17,5 @@
 * SCSS
 * Ruby on Rails
 * PostgreSQL
+* Heroku
+* S3

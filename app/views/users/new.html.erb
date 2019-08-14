@@ -18,14 +18,9 @@
           <%= f.label :password_confirmation, class: 'text-white' %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
-
         <%= f.submit "登録", class: 'btn-block btn-black' %>
       <% end %>
-      <% if logged_in? %>
-        <%= link_to 'アカウント削除', @user, method: :delete, data: { confrim: "アカウントを削除しますか？" }, class: "link" %>
-      <% else %>
-        <%= link_to 'ログインはこちら', login_path,class: 'text-white' %>
-      <% end %>
+      <%= link_to 'ログインはこちら', login_path %>
     </div>
   </div>
 </div>

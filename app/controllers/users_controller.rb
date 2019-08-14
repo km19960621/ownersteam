@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :login_required, except: [:new, :create, :show, :cards]
+
   def index
     @users = User.all
   end
@@ -46,14 +48,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find_by(id: params[:id])
-    @cards = Card.find_by(user_id: params[:id])
-    if @cards.nil?
-      @user.destroy
-    else
-      @cards.destroy
-      @user.destroy
-    end
-    redirect_to root_path, notice: "アカウントを削除しました"
+    redirect_to root_path, success: "アカウントを削除しました"
   end
 
   private

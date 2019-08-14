@@ -26,15 +26,13 @@ class CardsController < ApplicationController
   def update
     card = Card.find(params[:id])
     card.update!(card_params)
-    redirect_to "/users/#{card.user.id}/cards", notice: "更新しました"
+    redirect_to "/users/#{card.user.id}/cards", success: "カードの情報を更新しました"
   end
 
   def destroy
     card = Card.find(params[:id])
-    order = Order.find_by(card_id: card.id)
     card.destroy
-    order.destroy
-    redirect_to "/users/#{card.user.id}/cards", notice: "削除しました"
+    redirect_to "/users/#{card.user.id}/cards", success: "カードを削除しました"
   end
 
   private
