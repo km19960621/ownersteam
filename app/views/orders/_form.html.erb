@@ -6,21 +6,17 @@
     <tr>
       <th colspan="3">スターティングオーダー</th>
     </tr>
-    <tr>
-      <td class="td-num">打順</td>
-      <td class="td-position">ポジション</td>
-      <td class="td-card">選手名</td>
-    </tr>
+
     <% for num in 1..9 do %>
       <tr>
         <td class="td-num">
           <%= num %>
         </td>
         <%= f.fields_for :players do |p| %>
-          <td class="td-position">
+          <td class="td-position-select">
             <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
           </td>
-          <td class="td-card">
+          <td class="td-card-select">
             <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>
           </td>
         <% end %>
@@ -31,10 +27,10 @@
         <%= "" %>
       </td>
       <%= f.fields_for :players do |p| %>
-        <td class="td-position">
+        <td class="td-position-select">
           <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
         </td>
-        <td class="td-card">
+        <td class="td-card-select">
           <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>
         </td>
       <% end %>

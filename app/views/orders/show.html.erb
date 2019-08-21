@@ -110,6 +110,8 @@
     </tr>
   <% end %>
 </table>
-<% if current_user == @order.user %>
-  <%= link_to 'オーダーの編集', "/orders/#{@order.id}/edit", class: 'btn btn-sm order-edit-btn' %>
-<% end %>
+<div class="order-edit-link">
+  <% if current_user == @order.user %>
+    <%= link_to 'オーダーの編集', "/orders/#{@order.id}/edit", class: 'btn  btn-sm order-edit-btn' %>
+  <% end %>
+</div>

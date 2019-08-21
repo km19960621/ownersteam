@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= render partial: 'form', locals: { card: @card } %>
-      <%= link_to '削除', @card, method: :delete, data: { confirm: "削除しました" }, class: 'link' %>
+      <%= link_to '削除', @card, method: :delete, data: { confirm: "カードを削除しますか？" }, class: 'link' %>
     </div>
   </div>
 </div>
