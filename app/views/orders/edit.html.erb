@@ -1,4 +1,9 @@
-<!--
-  <%= render partial: 'form', locals: { order: @order } %>
--->
+<%= form_with model: @order do |f| %>
+  <div class="order-title-edit">
+    <%= f.text_field :title %>
+  </div>
+  <div class="submit">
+    <%= f.submit "タイトル変更" %>
+  </div>
+<% end %>
 <%= link_to '削除', @order, method: :delete, data: { confirm: "オーダーを削除しますか？" }, class: 'link' %>

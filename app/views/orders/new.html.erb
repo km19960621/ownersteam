@@ -1,1 +1,42 @@
-<%= render partial: 'form', locals: { order: @order } %>
+<%= form_with model: @order do |f| %>
+  <table border="1">
+    <caption align="top">
+      <%= f.text_field :title %>
+    </caption>
+    <tr>
+      <th colspan="3">スターティングオーダー</th>
+    </tr>
+
+    <% for num in 1..9 do %>
+      <tr>
+        <td class="td-num">
+          <%= num %>
+        </td>
+        <%= f.fields_for :players do |p| %>
+          <td class="td-position-select">
+            <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
+          </td>
+          <td class="td-card-select">
+            <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+    <tr>
+      <td class="td-num">
+        <%= "" %>
+      </td>
+      <%= f.fields_for :players do |p| %>
+        <td class="td-position-select">
+          <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
+        </td>
+        <td class="td-card-select">
+          <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+  <div class="submit">
+    <%= f.submit "オーダー決定" %>
+  </div>
+<% end %>
