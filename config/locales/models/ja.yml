@@ -3,7 +3,6 @@ ja:
     models:
       card: カード
       user: ユーザー
-      session: セッション
     attributes:
       card:
         name: 選手名
@@ -18,6 +17,5 @@ ja:
         card_id: FAVORITE PLAYER
         password: パスワード
         password_confirmation: パスワード（確認）
-      session:
-        email: メールアドレス
-        password: パスワード
+      order:
+        title: タイトル

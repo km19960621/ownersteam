@@ -1,9 +1,14 @@
-<%= form_with model: @order do |f| %>
-  <div class="order-title-edit">
-    <%= f.text_field :title %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_with model: @order do |f| %>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_area :title, class: 'form-control' %>
+        </div>
+          <%= f.submit "登録", class: "btn btn-black btn-block" %>
+      <% end %>
+      <%= link_to '削除', @order, method: :delete, data: { confirm: "オーダーを削除しますか？" }, class: 'link' %>
+    </div>
   </div>
-  <div class="submit">
-    <%= f.submit "タイトル変更" %>
-  </div>
-<% end %>
-<%= link_to '削除', @order, method: :delete, data: { confirm: "オーダーを削除しますか？" }, class: 'link' %>
+</div>
