@@ -14,7 +14,7 @@
         </td>
         <%= f.fields_for :players do |p| %>
           <td class="td-position-select">
-            <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
+            <%= p.collection_select(:position_id, Position.all, :id, :name, :include_blank => true, disabled: 1) %>
           </td>
           <td class="td-card-select">
             <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>
@@ -28,7 +28,7 @@
       </td>
       <%= f.fields_for :players do |p| %>
         <td class="td-position-select">
-          <%= p.collection_select :position_id, Position.all, :id, :name, :include_blank => true %>
+          <%= p.collection_select :position_id, Position.all, :id, :name, {:selected => 1} %>
         </td>
         <td class="td-card-select">
           <%= p.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true %>

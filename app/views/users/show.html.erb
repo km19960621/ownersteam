@@ -30,76 +30,19 @@
         <div class="order-content">
           <%= link_to image_tag('ownersteam.png', :class => 'ground'), "/orders/#{order.id}" %>
 
-          <% pitcher = order.players.find_by(position_id: 1) %>
-          <% pitcher_card = pitcher.card %>
-          <%= image_tag pitcher_card.image_front.url, :class => 'pitcher pitcher-img img' %>
-          <!--
-          <p class="pitcher pitcher-txt txt"><span class="position">投手</span><span class="name">山田太郎</span></p>
-          -->
+          <% players = ["pitcher", "catcher", "first", "second", "third", "short", "left", "center", "right", "dh"] %>
+          <% positions = ["pitcher", "catcher", "first", "second", "third", "short", "left", "center", "right", "dh"] %>
+          <% positions_text = ["投手", "捕手", "一塁手", "二塁手", "三塁手", "遊撃手", "左翼手", "中堅手", "右翼手", "DH"] %>
 
-          <% catcher = order.players.find_by(position_id: 2) %>
-          <% catcher_card = catcher.card %>
-          <%= image_tag catcher_card.image_front.url, :class => 'catcher catcher-img img' %>
-          <!--
-          <p class="catcher catcher-txt txt"><span class="position">捕手</span><span class="name"></span></p>
-          -->
-
-          <% first = order.players.find_by(position_id: 3) %>
-          <% first_card = first.card %>
-          <%= image_tag first_card.image_front.url, :class => 'first first-img img' %>
-          <!--
-          <p class="first first-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% second = order.players.find_by(position_id: 4) %>
-          <% second_card = second.card %>
-          <%= image_tag second_card.image_front.url, :class => 'second second-img img' %>
-          <!--
-          <p class="second second-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% third = order.players.find_by(position_id: 5) %>
-          <% third_card = third.card %>
-          <%= image_tag third_card.image_front.url, :class => 'third third-img img' %>
-          <!--
-          <p class="third third-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% short = order.players.find_by(position_id: 6) %>
-          <% short_card = short.card %>
-          <%= image_tag short_card.image_front.url, :class => 'short short-img img' %>
-          <!--
-          <p class="short short-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% left = order.players.find_by(position_id: 7) %>
-          <% left_card = left.card %>
-          <%= image_tag left_card.image_front.url, :class => 'left left-img img' %>
-          <!--
-          <p class="left left-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% center = order.players.find_by(position_id: 8) %>
-          <% center_card = center.card %>
-          <%= image_tag center_card.image_front.url, :class => 'center center-img img' %>
-          <!--
-          <p class=" -txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% right = order.players.find_by(position_id: 9) %>
-          <% right_card = right.card %>
-          <%= image_tag right_card.image_front.url, :class => 'right right-img img' %>
-          <!--
-          <p class=" -txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
-          <% dh = order.players.find_by(position_id: 10) %>
-          <% dh_card = dh.card %>
-          <%= image_tag dh_card.image_front.url, :class => 'dh dh-img img' %>
-          <!--
-          <p class="dh dh-txt txt"><span class="position"></span><span class="name"></span></p>
-          -->
-
+          <% for num in 1..10 do %>
+            <% if order.players.find_by(position_id: num) %>
+              <% players[num - 1] = order.players.find_by(position_id: num).card %>
+              <%= image_tag players[num - 1].image_front.url, :class => "#{positions[num - 1]} #{positions[num - 1]}-img img" %>
+              <!--
+              <p class="#{players[num]} #{players[num]}-txt txt"><span class="position"></span><span class="name">positons_text[num - 1]</span></p>
+              -->
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>

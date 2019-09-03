@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :login_required, except: [:new, :create, :show, :cards]
 
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
