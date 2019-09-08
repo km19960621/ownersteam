@@ -209,6 +209,7 @@ table th {
 .user-img {
   width: 75px;
   height: 75px;
+  object-fit: cover;
 }
 .user-name, .user-home {
   color: white;

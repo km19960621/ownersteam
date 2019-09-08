@@ -27,7 +27,7 @@
           -->
           <div class="form-group">
             <%= f.label :card_id %>
-            <%= f.collection_select :card_id, Card.all.order(:image_front), :id, :name, :include_blank => true, class: 'form-control' %>
+            <%= f.collection_select :card_id, @user.cards.all.order(:image_front), :id, :name, :include_blank => true, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :password %>
