@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @user = current_user
     @order = Order.new
     @order.players.build
   end
