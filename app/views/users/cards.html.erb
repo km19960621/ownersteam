@@ -5,7 +5,7 @@
   <% if @user.card_id? %>
   <div class="favorite-player-wrapper">
     <p class="favorite-player-title">FAVORITE PLAYER</p>
-    <%= image_tag @card.image_front.url, class: "favorite-player" %>
+    <%= image_tag @card.image.url, class: "favorite-player" %>
   </div>
   <% end %>
   <% if current_user == @user %>
@@ -31,7 +31,7 @@
             <% end %>
           </div>
           <div class="card-single">
-            <%= link_to image_tag(card.image_front.url, :width => 225), edit_card_path(card)  %>
+            <%= link_to image_tag(card.image.url, :width => 225), edit_card_path(card)  %>
           </div>
         </div>
       </div>

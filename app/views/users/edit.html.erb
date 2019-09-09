@@ -19,15 +19,9 @@
             <%= f.label :image %>
             <%= f.file_field :image %>
           </div>
-          <!--
-          <div class="form-group">
-            <%= f.label :profile %>
-            <%= f.text_field :profile, class: 'form-control' %>
-          </div>
-          -->
           <div class="form-group">
             <%= f.label :card_id %>
-            <%= f.collection_select :card_id, @user.cards.all.order(:image_front), :id, :name, :include_blank => true, class: 'form-control' %>
+            <%= f.collection_select :card_id, @user.cards.all.order(:image), :id, :name, :include_blank => true, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :password %>
@@ -40,7 +34,7 @@
 
           <%= f.submit "登録", class: 'btn-block btn-black' %>
         <% end %>
-        <%= link_to 'アカウント削除', @user, method: :delete, data: { confrim: "アカウントを削除しますか？" }, class: "link" %>
+        <%= link_to 'アカウント削除', @user, method: :delete, data: { confirm: "アカウントを削除しますか？" }, class: "link" %>
       </div>
     </div>
   </div>

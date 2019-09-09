@@ -3,10 +3,10 @@
   <div class="user-name"><%= "オーナー名：#{@user.name}" %></div>
   <div class="user-home"><%= "本拠地：#{@user.home}" %></div>
   <% if @user.card_id? %>
-  <div class="favorite-player-wrapper">
-    <p class="favorite-player-title">FAVORITE PLAYER</p>
-    <%= image_tag @card.image_front.url, class: "favorite-player" %>
-  </div>
+    <div class="favorite-player-wrapper">
+      <p class="favorite-player-title">FAVORITE PLAYER</p>
+      <%= image_tag @card.image.url, class: "favorite-player" %>
+    </div>
   <% end %>
   <% if current_user == @user %>
     <%= link_to 'ユーザー情報の編集', "/users/#{@user.id}/edit", class: 'btn btn-sm user-btn' %>
@@ -37,7 +37,7 @@
           <% for num in 1..10 do %>
             <% if order.players.find_by(position_id: num) %>
               <% players[num - 1] = order.players.find_by(position_id: num).card %>
-              <%= image_tag players[num - 1].image_front.url, :class => "#{positions[num - 1]} #{positions[num - 1]}-img img" %>
+              <%= image_tag players[num - 1].image.url, :class => "#{positions[num - 1]} #{positions[num - 1]}-img img" %>
               <!--
               <p class="#{players[num]} #{players[num]}-txt txt"><span class="position"></span><span class="name">positons_text[num - 1]</span></p>
               -->

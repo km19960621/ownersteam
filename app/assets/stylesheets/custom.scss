@@ -156,6 +156,7 @@ table th {
 }
 .card-name-text {
   color: white;
+  margin: 0;
 }
 .card-single {
   padding: 3px 9px;
@@ -189,6 +190,7 @@ table th {
 }
 .order-title-text {
   color: white;
+  margin: 0;
 }
 .order-single {
   padding: 4px 12px;
@@ -279,12 +281,12 @@ table th {
 
 .order-edit-link {
   text-align: center;
+  margin: 10px;
 }
 .order-edit-btn {
   color: white;
   background-color: mediumaquamarine;
   font-size: 5px;
-  margin: 10px;
 }
 
 

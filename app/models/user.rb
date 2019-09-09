@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 15}
-  validates :email, presence: true, format: {with: /[\w.\-]+@[\w\-]+\.[\w.\-]+/}
+  validates :email, presence: true, uniqueness: true, format: {with: /[\w.\-]+@[\w\-]+\.[\w.\-]+/}
   validates :password, presence: true
 
   has_secure_password

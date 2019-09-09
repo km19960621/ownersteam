@@ -6,14 +6,12 @@ ja:
     attributes:
       card:
         name: 選手名
-        image_front: カードの画像
-        image_back: カードの画像（裏）
+        image: カードの画像
       user:
         name: オーナー名
         email: メールアドレス
         home: 本拠地
         image: プロフィール画像
-        profile: プロフィール
         card_id: FAVORITE PLAYER
         password: パスワード
         password_confirmation: パスワード（確認）

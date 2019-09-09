@@ -8,14 +8,18 @@
   <div class="order-single-wrapper">
     <div class="order-title">
       <% if @order.title? %>
-        <%= link_to @order.title, "/orders/#{@order.id}", class: "order-title-text" %>
+        <p class="order-title-text">
+          <%= @order.title %>
+        </p>
       <% else %>
-        <%= link_to "駒形ダックス#{@order.id}", "/orders/#{@order.id}", class: "order-title-text" %>
+        <p class="order-title-text">
+          <%= "駒形ダックス#{@order.id}" %>
+        </p>
       <% end %>
     </div>
     <div class="order-single">
       <div class="order-content">
-        <%= link_to image_tag('ownersteam.png', :class => 'ground'), "/orders/#{@order.id}" %>
+        <%= image_tag 'ownersteam.png', :class => 'ground' %>
 
         <% players = ["pitcher", "catcher", "first", "second", "third", "short", "left", "center", "right", "dh"] %>
         <% positions = ["pitcher", "catcher", "first", "second", "third", "short", "left", "center", "right", "dh"] %>
@@ -24,7 +28,7 @@
         <% for num in 1..10 do %>
           <% if @order.players.find_by(position_id: num) %>
             <% players[num - 1] = @order.players.find_by(position_id: num).card %>
-            <%= image_tag players[num - 1].image_front.url, :class => "#{positions[num - 1]} #{positions[num - 1]}-img img" %>
+            <%= image_tag players[num - 1].image.url, :class => "#{positions[num - 1]} #{positions[num - 1]}-img img" %>
             <!--
             <p class="#{players[num]} #{players[num]}-txt txt"><span class="position"></span><span class="name">positons_text[num - 1]</span></p>
             -->

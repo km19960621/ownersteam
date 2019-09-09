@@ -17,7 +17,7 @@
             <%= p.collection_select(:position_id, Position.all, :id, :name, :include_blank => true, disabled: 1) %>
           </td>
           <td class="td-card-select">
-            <%= p.collection_select :card_id, @user.cards.all.order(:image_front), :id, :name, :include_blank => true %>
+            <%= p.collection_select :card_id, @user.cards.all.order(:image), :id, :name, :include_blank => true %>
           </td>
         <% end %>
       </tr>
@@ -31,7 +31,7 @@
           <%= p.collection_select :position_id, Position.all, :id, :name, {:selected => 1} %>
         </td>
         <td class="td-card-select">
-          <%= p.collection_select :card_id, @user.cards.all.order(:image_front), :id, :name, :include_blank => true %>
+          <%= p.collection_select :card_id, @user.cards.all.order(:image), :id, :name, :include_blank => true %>
         </td>
       <% end %>
     </tr>

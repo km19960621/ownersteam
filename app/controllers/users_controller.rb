@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.card_id?
       @card = Card.find(@user.card_id)
     end
-    @cards = @user.cards.page(params[:page]).per(CARD_NUM).order(:image_front)
+    @cards = @user.cards.page(params[:page]).per(CARD_NUM).order(:image)
   end
 
   def edit
@@ -45,11 +45,12 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find_by(id: params[:id])
     redirect_to root_path, success: "アカウントを削除しました"
+    log_out @user
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :image, :profile,  :profile, :card_id, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :image, :card_id, :password, :password_confirmation)
   end
 
   def log_in(user)
