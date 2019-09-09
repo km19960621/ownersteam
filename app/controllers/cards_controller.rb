@@ -1,10 +1,6 @@
 class CardsController < ApplicationController
   before_action :login_required
 
-  def index
-    @cards = Card.page(params[:page]).per(CARD_NUM).order(:image_front)
-  end
-
   def new
     @card = Card.new
   end
